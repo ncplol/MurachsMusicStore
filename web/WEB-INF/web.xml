@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+    http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    
+    <display-name>Murach's Servlets and JSP: Music Store site</display-name>
+    <description>The Music Store web site that's described in 
+        Murach's Java Servlets and JSP (second edition)</description>
+    
+    <!-- define a context initialization parameter -->
+    <context-param>
+        <param-name>custServEmail</param-name>
+        <param-value>custserv@freshcornrecords.com</param-value>
+    </context-param>
+    
+    <!-- servlet definitions (alphabetical by complete class name) -->
+    <servlet>
+        <servlet-name>DisplayInvoicesServlet</servlet-name>
+        <servlet-class>music.admin.DisplayInvoicesServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ProcessInvoiceServlet</servlet-name>
+        <servlet-class>music.admin.ProcessInvoiceServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DisplayReportServlet</servlet-name>
+        <servlet-class>music.admin.DisplayReportServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DisplayAdminInvoiceServlet</servlet-name>
+        <servlet-class>music.admin.DisplayInvoiceServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DisplayCartServlet</servlet-name>
+        <servlet-class>music.cart.DisplayCartServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CompleteOrderServlet</servlet-name>
+        <servlet-class>music.cart.CompleteOrderServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DisplayInvoiceServlet</servlet-name>
+        <servlet-class>music.cart.DisplayInvoiceServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ProcessUserServlet</servlet-name>
+        <servlet-class>music.cart.ProcessUserServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DisplayQuickOrderServlet</servlet-name>
+        <servlet-class>music.cart.DisplayQuickOrderServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CheckCartUserServlet</servlet-name>
+        <servlet-class>music.cart.CheckUserServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CheckUserServlet</servlet-name>
+        <servlet-class>music.catalog.CheckUserServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteCookiesServlet</servlet-name>
+        <servlet-class>music.catalog.DeleteCookiesServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DisplayProductServlet</servlet-name>
+        <servlet-class>music.catalog.DisplayProductServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RegisterUserServlet</servlet-name>
+        <servlet-class>music.catalog.RegisterUserServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>WriteDownloadServlet</servlet-name>
+        <servlet-class>music.catalog.WriteDownloadServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddToEmailListServlet</servlet-name>
+        <servlet-class>music.email.AddToEmailListServlet</servlet-class>
+    </servlet>
+
+    <!-- servlet mappings -->
+    <servlet-mapping>
+        <servlet-name>DisplayInvoicesServlet</servlet-name>
+        <url-pattern>/admin/displayInvoices</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProcessInvoiceServlet</servlet-name>
+        <url-pattern>/admin/processInvoice</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DisplayReportServlet</servlet-name>
+        <url-pattern>/admin/displayReport</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DisplayAdminInvoiceServlet</servlet-name>
+        <url-pattern>/admin/displayInvoice</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DisplayCartServlet</servlet-name>
+        <url-pattern>/cart/displayCart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CompleteOrderServlet</servlet-name>
+        <url-pattern>/cart/completeOrder</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DisplayQuickOrderServlet</servlet-name>
+        <url-pattern>/cart/displayQuickOrder</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DisplayQuickOrderServlet</servlet-name>
+        <url-pattern>/cart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DisplayInvoiceServlet</servlet-name>
+        <url-pattern>/cart/displayInvoice</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProcessUserServlet</servlet-name>
+        <url-pattern>/cart/processUser</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CheckCartUserServlet</servlet-name>
+        <url-pattern>/cart/checkUser</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CheckUserServlet</servlet-name>
+        <url-pattern>/catalog/checkUser</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteCookiesServlet</servlet-name>
+        <url-pattern>/catalog/deleteCookies</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DisplayProductServlet</servlet-name>
+        <url-pattern>/catalog/displayProduct</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>WriteDownloadServlet</servlet-name>
+        <url-pattern>/catalog/writeDownload</url-pattern>
+    </servlet-mapping>    
+    <servlet-mapping>
+        <servlet-name>RegisterUserServlet</servlet-name>
+        <url-pattern>/catalog/registerUser</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddToEmailListServlet</servlet-name>
+        <url-pattern>/email/addToEmailList</url-pattern>
+    </servlet-mapping>
+
+    <!-- define a servlet context listener -->
+    <listener>
+        <listener-class>
+            music.util.MusicStoreContextListener
+        </listener-class>
+    </listener>
+            
+    <!-- define the welcome files -->
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+        
+    <!-- Enable the custom error pages -->
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error_404.jsp</location>
+    </error-page>
+    <error-page>
+        <exception-type>java.lang.Throwable</exception-type>
+        <location>/error_java.jsp</location>
+    </error-page>
+
+    <!-- Define two security roles -->
+    <security-role>
+        <description>customer service employees</description>
+        <role-name>service</role-name>
+    </security-role>
+    <security-role>
+        <description>programmers</description>
+        <role-name>programmer</role-name>
+    </security-role>
+
+    <!-- Restrict access to the URLs in the admin directory -->
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Admin</web-resource-name>
+            <url-pattern>/admin/*</url-pattern>
+        </web-resource-collection>
+        <!-- Authorize the service and programmer roles -->
+        <auth-constraint>
+            <role-name>service</role-name>
+            <role-name>programmer</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+    <!-- Use form-based authentication to provide access -->
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <form-login-config>
+            <form-login-page>/login.jsp</form-login-page>
+            <form-error-page>/login_error.jsp</form-error-page>
+        </form-login-config>
+    </login-config>
+   
+    <!-- Use basic authentication to provide access -->
+    <!--
+    <login-config>
+        <auth-method>BASIC</auth-method>
+        <realm-name>Basic Authentication</realm-name>
+    </login-config>
+    -->
+
+</web-app>
