@@ -33,8 +33,7 @@
               driverClassName="com.mysql.jdbc.Driver" 
               url="jdbc:mysql://25.10.160.102:3306/music?autoReconnect=true" 
               logAbandoned="true" removeAbandoned="true" 
-              removeAbandonedTimeout="60" type="javax.sql.DataSource"
-              factory="org.apache.commons.dbcp.BasicDataSourceFactory"    />
+              removeAbandonedTimeout="60" type="javax.sql.DataSource" />
 
     <Realm className="org.apache.catalina.realm.DataSourceRealm" debug="99"
            dataSourceName="jdbc/musicDB" localDataSource="true"
