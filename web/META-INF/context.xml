@@ -31,7 +31,7 @@
               maxActive="100" maxIdle="30" maxWait="10000" 
               username="nick" password="Hor1z0n"
               driverClassName="com.mysql.jdbc.Driver" 
-              url="jdbc:mysql://25.10.160.102:3306/music?autoReconnect=true" 
+              url="jdbc:mysql://216.37.111.62:3306/music?zeroDateTimeBehavior=convertToNull" 
               logAbandoned="true" removeAbandoned="true" 
               removeAbandonedTimeout="60" type="javax.sql.DataSource" />
 

@@ -3,14 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Nick/Documents/NetBeansProjects/MusicStore/web/META-INF/context.xml</file>
-            <file>file:/C:/Users/Nick/Documents/NetBeansProjects/MusicStore/web/WEB-INF/web.xml</file>
-            <file>file:/C:/Users/Nick/Documents/NetBeansProjects/MusicStore/web/index.jsp</file>
-            <file>file:/C:/Users/Nick/Documents/NetBeansProjects/MusicStore/web/includes/header.html</file>
-            <file>file:/C:/Users/Nick/Documents/NetBeansProjects/MusicStore/web/includes/column_left_home.jsp</file>
-            <file>file:/C:/Users/Nick/Documents/NetBeansProjects/MusicStore/web/includes/column_right_news.jsp</file>
-            <file>file:/C:/Users/Nick/Documents/NetBeansProjects/MusicStore/web/includes/footer.jsp</file>
-            <file>file:/C:/Users/Nick/Documents/NetBeansProjects/MusicStore/src/java/cart/CompleteOrderServlet.java</file>
+            <file>file:/C:/Users/Nick/Documents/NetBeansProjects/music/MurachsMusicStore/web/META-INF/context.xml</file>
+            <file>file:/C:/Users/Nick/Documents/NetBeansProjects/music/MurachsMusicStore/web/WEB-INF/products.txt</file>
+            <file>file:/C:/Users/Nick/Documents/NetBeansProjects/music/MurachsMusicStore/web/admin/prodcut_delete.jsp</file>
+            <file>file:/C:/Users/Nick/Documents/NetBeansProjects/music/MurachsMusicStore/src/java/music/Product.java</file>
+            <file>file:/C:/Users/Nick/Documents/NetBeansProjects/music/MurachsMusicStore/web/admin/product_edit.jsp</file>
+            <file>file:/C:/Users/Nick/Documents/NetBeansProjects/music/MurachsMusicStore/web/admin/product_maintenance.jsp</file>
+            <file>file:/C:/Users/Nick/Documents/NetBeansProjects/music/MurachsMusicStore/src/java/music/data/DBUtil.java</file>
+            <file>file:/C:/Users/Nick/Documents/NetBeansProjects/music/MurachsMusicStore/src/java/music/ProductIO.java</file>
+            <file>file:/C:/Users/Nick/Documents/NetBeansProjects/music/MurachsMusicStore/src/java/music/data/ConnectionPool.java</file>
         </group>
     </open-files>
 </project-private>

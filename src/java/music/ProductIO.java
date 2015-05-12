@@ -1,5 +1,7 @@
+package music;
 
 import java.io.*;
+import java.nio.file.Path;
 import java.util.*;
 
 public class ProductIO {
@@ -10,27 +12,26 @@ public class ProductIO {
         products = new ArrayList<>();
         File file = new File(path);
         try {
-            BufferedReader in = new BufferedReader(new FileReader(file));
+            try (BufferedReader in = new BufferedReader(new FileReader(file))) {
+                String line = in.readLine();
+                while (line != null) {
+                    StringTokenizer t = new StringTokenizer(line, "|");
+                    if (t.countTokens() >= 3) {
+                        String code = t.nextToken();
+                        String description = t.nextToken();
+                        String priceAsString = t.nextToken();
+                        double price = Double.parseDouble(priceAsString);
 
-            String line = in.readLine();
-            while (line != null) {
-                StringTokenizer t = new StringTokenizer(line, "|");
-                if (t.countTokens() >= 3) {
-                    String code = t.nextToken();
-                    String description = t.nextToken();
-                    String priceAsString = t.nextToken();
-                    double price = Double.parseDouble(priceAsString);
+                        Product p = new Product();
+                        p.setCode(code);
+                        p.setDescription(description);
+                        p.setPrice(price);
 
-                    Product p = new Product();
-                    p.setCode(code);
-                    p.setDescription(description);
-                    p.setPrice(price);
-
-                    products.add(p);
+                        products.add(p);
+                    }
+                    line = in.readLine();
                 }
-                line = in.readLine();
             }
-            in.close();
             return products;
         } catch (IOException e) {
             e.printStackTrace();
