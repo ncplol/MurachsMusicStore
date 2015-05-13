@@ -1,23 +1,17 @@
-<%@page import="java.nio.file.Paths"%>
 <jsp:include page="/includes/header.html" />
 
 <!-- begin middle column -->
 
-
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="music.Product" %>
+<%@ page import="music.business.Product" %>
 <%@ page import="music.ProductIO" %>
 <%@ page import="java.sql.*" %>
-<%@ page import="java.nio.file.Path" %>
-
-
 
 <%
-    //Path path = Paths.get("C:\\Users\\Nick\\Documents\\NetBeansProjects\\music\\MurachsMusicStore\\web\\WEB-INF\\products.txt");
     ArrayList<Product> products = ProductIO.getProducts("C:\\Users\\Nick\\Documents\\NetBeansProjects\\music\\MurachsMusicStore\\web\\WEB-INF\\products.txt");
 %>
 
-<table border="1" width="100%">
+<table border="1" width="60%">
     <tr>
         <th>Code</th>
         <th>Description</th>
@@ -26,9 +20,7 @@
         <th></th>
     </tr>
 
-    <%
-        for (int i = 0; i < products.size(); i++) {
-    %>
+    <%for (int i = 0; i < products.size(); i++) {%>
     <tr>
         <td>
             <%out.println(products.get(i).getCode());%> 
@@ -51,7 +43,6 @@
         </td>
     </tr>
     <%}%>
-
 </table>
 
 <form action="product_edit.jsp" method="post">

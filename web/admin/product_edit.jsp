@@ -35,47 +35,53 @@
 
         <%if (code == null && description == null && price == null) {%>
         <h1>Add Product</h1>
-        <i>You must enter a description for the product</i>
-        <form action="addProduct" method="post">
-            <table cellspacing="5" border="1">
-                <tr>
-                    <td>Product Code:</td>
-                    <td><input type="TEXT" name="code" value=""></td>
-                </tr>
-                <tr>
-                    <td>Product Description:</td>
-                    <td><input type="TEXT" name="description" value=""></td>
-                </tr>
-                <tr>
-                    <td>Product Price:</td>
-                    <td><input type="TEXT" name="price" value=""></td>
-                </tr>
-            </table>
-            <input type=submit value="Add Product" onClick="validate(this.form)">
-        </form>
-        <%} else {%>
-        <h1>Edit Product</h1>
-        <form action="editProduct" method="post">
-            <table cellspacing="5" border="1">
-                <tr>
-                    <td>Product Code:</td>
-                    <td><input type="TEXT" name="code" value=<%=code%>></td>
-                </tr>
-                <tr>
-                    <td>Product Description:</td>
-                    <td><input type="TEXT" name="description" value="<%=description%>"></td>
-                </tr>
-                <tr>
-                    <td>Product Price:</td>
-                    <td><input type="TEXT" name="price" value=<%=price%>></td>
-                </tr>
-            </table>
-            <input type=submit value="Update Product" onClick="validate(this.form)">
-        </form>
-        <%}%>
-        <form action="product_maintenance.jsp" method="post">
-            <input type=submit value="View Products">
-        </form>
-    </body>
+    <td align=left>Required <font color=red>*</font></td>
+    <form action="addProduct" method="post">
+        <table cellspacing="5" border="1">
+            <tr>
+                <td>Product Code:</td>
+                <td><input type="TEXT" name="code" value="">
+                    <font color=red>*</font>
+                </td>
+            </tr>
+            <tr>
+                <td>Product Description:</td>
+                <td><input type="TEXT" name="description" value="">
+                    <font color=red>*</font>
+                </td>
+            </tr>
+            <tr>
+                <td>Product Price:</td>
+                <td><input type="TEXT" name="price" value="">
+                    <font color=red>*</font>
+                </td>
+            </tr>
+        </table>
+        <input type=submit value="Add Product" onClick="validate(this.form)">
+    </form>
+    <%} else {%>
+    <h1>Edit Product</h1>
+    <form action="editProduct" method="post">
+        <table cellspacing="5" border="1">
+            <tr>
+                <td>Product Code:</td>
+                <td><input type="TEXT" name="code" value=<%=code%>></td>
+            </tr>
+            <tr>
+                <td>Product Description:</td>
+                <td><input type="TEXT" name="description" value="<%=description%>"></td>
+            </tr>
+            <tr>
+                <td>Product Price:</td>
+                <td><input type="TEXT" name="price" value=<%=price%>></td>
+            </tr>
+        </table>
+        <input type=submit value="Update Product" onClick="validate(this.form)">
+    </form>
+    <%}%>
+    <form action="product_maintenance.jsp" method="post">
+        <input type=submit value="View Products">
+    </form>
+</body>
 </html>
 

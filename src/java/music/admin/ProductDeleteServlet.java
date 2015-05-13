@@ -1,25 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package music.admin;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import music.Product;
+import music.business.Product;
 import music.ProductIO;
+import music.business.Product;
+import music.data.ProductDB;
 
-/**
- *
- * @author drshwin92
- */
 @WebServlet(name = "ProductDeleteServlet", urlPatterns = {"/ProductDeleteServlet"})
 public class ProductDeleteServlet extends HttpServlet {
 
@@ -46,6 +38,7 @@ public class ProductDeleteServlet extends HttpServlet {
         product.setPrice(price);
 
         ProductIO.delete(product, path);
+        ProductDB.delete(product);
 
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
