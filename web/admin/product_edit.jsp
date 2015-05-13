@@ -1,9 +1,3 @@
-<%-- 
-    Document   : product_edit
-    Created on : May 7, 2015, 9:07:27 PM
-    Author     : Nick
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,26 +6,76 @@
         <title>Add Product | Murach's Music Store</title>
     </head>
     <body>
-        <h1>Prodcut</h1>
-        <i>You must enter a description for the product</i>
-        <table border="1" width="100%">
-            <tr>
-                <td>Product Code:</td>
-                <td>Product Description:</td>
-                <td>Product Price:</td>
-            </tr>
-            <tr>
-                <td><input type="TEXT" name="Product Code"</td>
-                <td><input type="TEXT" name="Product Description"</td>
-                <td><input type="TEXT" name="Product Price"</td>
-            </tr>
-        </table>
+        <%
+            String code = request.getParameter("code");
+            String description = request.getParameter("description");
+            String price = request.getParameter("price");
 
-        <form action="product_edit.jsp" method="post">
-            <input type=submit value="Update Product">
+            System.out.println("Code is this: " + code);
+            System.out.println("Decription is this: " + description);
+            System.out.println("Price is this: " + price);
+        %>
+
+        <script language="JavaScript">
+            function validate(form) {
+                if (form.code.value == "") {
+                    alert("Please enter a product code.");
+                    form.code.focus();
+                } else if (form.description.value == "") {
+                    alert("Please enter a product description.");
+                    form.description.focus();
+                } else if (form.price.value == "") {
+                    alert("Please enter a product price.");
+                    form.price.focus();
+                } else {
+                    form.submit();
+                }
+            }
+        </script>
+
+        <%if (code == null && description == null && price == null) {%>
+        <h1>Add Product</h1>
+        <i>You must enter a description for the product</i>
+        <form action="addProduct" method="post">
+            <table cellspacing="5" border="1">
+                <tr>
+                    <td>Product Code:</td>
+                    <td><input type="TEXT" name="code" value=""></td>
+                </tr>
+                <tr>
+                    <td>Product Description:</td>
+                    <td><input type="TEXT" name="description" value=""></td>
+                </tr>
+                <tr>
+                    <td>Product Price:</td>
+                    <td><input type="TEXT" name="price" value=""></td>
+                </tr>
+            </table>
+            <input type=submit value="Add Product" onClick="validate(this.form)">
         </form>
+        <%} else {%>
+        <h1>Edit Product</h1>
+        <form action="editProduct" method="post">
+            <table cellspacing="5" border="1">
+                <tr>
+                    <td>Product Code:</td>
+                    <td><input type="TEXT" name="code" value=<%=code%>></td>
+                </tr>
+                <tr>
+                    <td>Product Description:</td>
+                    <td><input type="TEXT" name="description" value="<%=description%>"></td>
+                </tr>
+                <tr>
+                    <td>Product Price:</td>
+                    <td><input type="TEXT" name="price" value=<%=price%>></td>
+                </tr>
+            </table>
+            <input type=submit value="Update Product" onClick="validate(this.form)">
+        </form>
+        <%}%>
         <form action="product_maintenance.jsp" method="post">
             <input type=submit value="View Products">
         </form>
     </body>
 </html>
+

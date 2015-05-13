@@ -1,19 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" 
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
-    http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
-    
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee      http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
     <display-name>Murach's Servlets and JSP: Music Store site</display-name>
     <description>The Music Store web site that's described in 
         Murach's Java Servlets and JSP (second edition)</description>
-    
     <!-- define a context initialization parameter -->
     <context-param>
         <param-name>custServEmail</param-name>
         <param-value>custserv@freshcornrecords.com</param-value>
     </context-param>
-    
     <!-- servlet definitions (alphabetical by complete class name) -->
     <servlet>
         <servlet-name>DisplayInvoicesServlet</servlet-name>
@@ -79,7 +73,6 @@
         <servlet-name>AddToEmailListServlet</servlet-name>
         <servlet-class>music.email.AddToEmailListServlet</servlet-class>
     </servlet>
-
     <!-- servlet mappings -->
     <servlet-mapping>
         <servlet-name>DisplayInvoicesServlet</servlet-name>
@@ -140,7 +133,7 @@
     <servlet-mapping>
         <servlet-name>WriteDownloadServlet</servlet-name>
         <url-pattern>/catalog/writeDownload</url-pattern>
-    </servlet-mapping>    
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>RegisterUserServlet</servlet-name>
         <url-pattern>/catalog/registerUser</url-pattern>
@@ -149,20 +142,46 @@
         <servlet-name>AddToEmailListServlet</servlet-name>
         <url-pattern>/email/addToEmailList</url-pattern>
     </servlet-mapping>
-
+    
+    <servlet>
+        <servlet-name>ProductAddServlet</servlet-name>
+        <servlet-class>music.admin.ProductAddServlet</servlet-class>
+    </servlet>
+    <!-- the mapping for the servlets -->
+    <servlet-mapping>
+        <servlet-name>ProductAddServlet</servlet-name>
+        <url-pattern>/admin/addProduct</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ProductDeleteServlet</servlet-name>
+        <servlet-class>music.admin.ProductDeleteServlet</servlet-class>
+    </servlet>
+    <!-- the mapping for the servlets -->
+    <servlet-mapping>
+        <servlet-name>ProductDeleteServlet</servlet-name>
+        <url-pattern>/admin/deleteProduct</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ProductEditServlet</servlet-name>
+        <servlet-class>music.admin.ProductEditServlet</servlet-class>
+    </servlet>
+    <!-- the mapping for the servlets -->
+    <servlet-mapping>
+        <servlet-name>ProductEditServlet</servlet-name>
+        <url-pattern>/admin/editProduct</url-pattern>
+    </servlet-mapping>
+    
     <!-- define a servlet context listener -->
     <listener>
         <listener-class>
             music.util.MusicStoreContextListener
         </listener-class>
     </listener>
-            
     <!-- define the welcome files -->
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
         <welcome-file>index.html</welcome-file>
     </welcome-file-list>
-        
     <!-- Enable the custom error pages -->
     <error-page>
         <error-code>404</error-code>
@@ -172,7 +191,6 @@
         <exception-type>java.lang.Throwable</exception-type>
         <location>/error_java.jsp</location>
     </error-page>
-
     <!-- Define two security roles -->
     <security-role>
         <description>customer service employees</description>
@@ -182,7 +200,6 @@
         <description>programmers</description>
         <role-name>programmer</role-name>
     </security-role>
-
     <!-- Restrict access to the URLs in the admin directory -->
     <security-constraint>
         <web-resource-collection>
@@ -195,7 +212,6 @@
             <role-name>programmer</role-name>
         </auth-constraint>
     </security-constraint>
-
     <!-- Use form-based authentication to provide access -->
     <login-config>
         <auth-method>FORM</auth-method>
@@ -204,7 +220,6 @@
             <form-error-page>/login_error.jsp</form-error-page>
         </form-login-config>
     </login-config>
-   
     <!-- Use basic authentication to provide access -->
     <!--
     <login-config>
@@ -212,5 +227,4 @@
         <realm-name>Basic Authentication</realm-name>
     </login-config>
     -->
-
 </web-app>

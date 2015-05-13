@@ -41,6 +41,14 @@
         <td>
             <%out.println(products.get(i).getPrice());%>
         </td>
+
+        <td>
+            <a href="product_edit.jsp?code=<%=products.get(i).getCode()%>&description=<%=products.get(i).getDescription()%>&price=<%=products.get(i).getPrice()%>">Edit</a>
+        </td>
+
+        <td>
+            <a href="product_delete.jsp?code=<%=products.get(i).getCode()%>&description=<%=products.get(i).getDescription()%>&price=<%=products.get(i).getPrice()%>">Delete</a>
+        </td>
     </tr>
     <%}%>
 
